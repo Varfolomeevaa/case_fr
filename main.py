@@ -170,3 +170,23 @@ turtle.pd()
 turtle.rt(0)
 ice_fractal_2(2, 50)
 turtle.done()'''
+
+def levi(n, size):
+    x = size #чтобы чем больше была глуб.рекурсии, тем лучше вписывался рисунок в экран
+    if n == 0:
+        turtle.fd(x)
+    elif n % 2 == 0:
+        turtle.lt(45)
+        levi(n-1, x)
+        turtle.rt(45)
+        levi(n - 1, x)
+        turtle.lt(90)
+    else:
+        turtle.lt(45)
+        levi(n-1, x)
+        turtle.rt(90)
+        levi(n - 1, x)
+
+levi(8, 10)
+turtle.done()
+
