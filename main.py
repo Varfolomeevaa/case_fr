@@ -95,11 +95,11 @@ def koch_snow(n, x):
     for i in range(3):
             koch(n, x)
             turtle.rt(120)
-turtle.up()
+'''turtle.up()
 turtle.goto(-100, 0)
 turtle.down()
 koch_snow(3, 200)
-turtle.done()
+turtle.done()'''
 
 def minkowski(n, size):
     if n == 0:
@@ -123,4 +123,25 @@ def minkowski(n, size):
 turtle.goto(-500, 0)
 turtle.down()
 minkowski(3,10)
+turtle.done()'''
+
+def ice_fractal_1(n, size):
+    if n == 0:
+        turtle.fd(size)
+
+    else:
+        x = size
+        print(x)
+        ice_fractal_1(n - 1, x)
+        turtle.lt(90)
+        ice_fractal_1(n - 1, x/2)
+        turtle.rt(180)
+        ice_fractal_1(n - 1, x/2)
+        turtle.rt(-90)
+        ice_fractal_1(n - 1, x)
+'''turtle.pu()
+turtle.goto(-500, 0)
+turtle.pd()
+turtle.rt(0)
+ice_fractal_1(5, 50)
 turtle.done()'''
