@@ -47,3 +47,28 @@ color_tree(4, 100)
 turtle.done()
 '''
 
+def branch(n, size):
+    if n == 0:
+        turtle.lt(180)
+        return
+
+    x = size/(n+1)
+    for i in range(n):
+        turtle.fd(x)
+        turtle.lt(45)
+        branch(n-i-1, 0.5*x*(n-i-1))
+        turtle.lt(90)
+        branch(n-i-1, 0.5*x*(n-i-1))
+        turtle.rt(135)
+
+    turtle.fd(x)
+    turtle.lt(180)
+    turtle.fd(size)
+
+#turtle.tracer(0)
+turtle.up()
+turtle.goto(0,-100)
+turtle.left(90)
+turtle.down()
+branch(2, 400)
+turtle.done()
