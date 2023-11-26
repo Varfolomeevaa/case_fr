@@ -64,11 +64,30 @@ def branch(n, size):
     turtle.fd(x)
     turtle.lt(180)
     turtle.fd(size)
-
+'''
 #turtle.tracer(0)
 turtle.up()
 turtle.goto(0,-100)
 turtle.left(90)
 turtle.down()
 branch(2, 400)
+turtle.done()'''
+
+def koch(order, size):
+    if order == 0:
+        turtle.fd(size)
+    else:
+        koch(order-1, size/3)
+        turtle.lt(60)
+        koch(order-1, size/3)
+        turtle.rt(120)
+        koch(order-1, size/3)
+        turtle.lt(60)
+        koch(order-1, size/3)
+'''
+turtle.up()
+turtle.goto(-100,0)
+turtle.down()
+koch(2,100)
 turtle.done()
+'''
