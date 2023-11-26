@@ -145,3 +145,28 @@ turtle.pd()
 turtle.rt(0)
 ice_fractal_1(5, 50)
 turtle.done()'''
+
+def ice_fractal_2(n, size):
+    if n == 0:
+        turtle.fd(size)
+
+    else:
+        x = size
+        ice_fractal_2(n - 1, x)
+        turtle.lt(120)
+        ice_fractal_2(n - 1, x/2)
+        turtle.lt(180)
+        ice_fractal_2(n - 1, x/2)
+        turtle.lt(120)
+        ice_fractal_2(n - 1, x / 2)
+        turtle.lt(180)
+        ice_fractal_2(n - 1, x / 2)
+        turtle.lt(120)
+        ice_fractal_2(n - 1, x)
+'''        
+turtle.pu()
+turtle.goto(0, 0)
+turtle.pd()
+turtle.rt(0)
+ice_fractal_2(2, 50)
+turtle.done()'''
