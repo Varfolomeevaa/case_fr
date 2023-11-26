@@ -100,3 +100,27 @@ turtle.goto(-100, 0)
 turtle.down()
 koch_snow(3, 200)
 turtle.done()
+
+def minkowski(n, size):
+    if n == 0:
+        turtle.fd(size)
+    else:
+        minkowski(n-1, size)
+        turtle.lt(90)
+        minkowski(n - 1, size)
+        turtle.rt(90)
+        minkowski(n - 1, size)
+        turtle.rt(90)
+        minkowski(n - 1, size)
+        minkowski(n - 1, size)
+        turtle.lt(90)
+        minkowski(n - 1, size)
+        turtle.lt(90)
+        minkowski(n - 1, size)
+        turtle.rt(90)
+        minkowski(n - 1, size)
+'''turtle.up()
+turtle.goto(-500, 0)
+turtle.down()
+minkowski(3,10)
+turtle.done()'''
