@@ -91,3 +91,12 @@ turtle.down()
 koch(2,100)
 turtle.done()
 '''
+def koch_snow(n, x):
+    for i in range(3):
+            koch(n, x)
+            turtle.rt(120)
+turtle.up()
+turtle.goto(-100, 0)
+turtle.down()
+koch_snow(3, 200)
+turtle.done()
