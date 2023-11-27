@@ -187,6 +187,27 @@ def levi(n, size):
         turtle.rt(90)
         levi(n - 1, x)
 
-levi(8, 10)
-turtle.done()
+#levi(8, 10)
+#turtle.done()
+
+def new_fractal_1(n, size):
+    if n == 0:
+        for i in range(2):
+            turtle.fd(size/4)
+            turtle.lt(90)
+            turtle.fd(size/4)
+            turtle.rt(180)
+            turtle.fd(size/4)
+            turtle.lt(90)
+            turtle.fd(size/4)
+            turtle.rt(180)
+    else:
+        for i in range(3):
+            ice_fractal_1(n, size / 2)
+            new_fractal_1(n-1, size)
+            turtle.rt(120)
+
+#turtle.speed(-10)
+#new_fractal_1(2, 50)
+#turtle.done()
 
