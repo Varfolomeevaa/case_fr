@@ -1,3 +1,8 @@
+'''
+Group:
+Varfolomeeva Victoria: 85
+Sineokaya Anastasia: 90
+'''
 import turtle
 
 
