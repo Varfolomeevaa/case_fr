@@ -2,12 +2,22 @@ import turtle
 
 
 def square(n):
+    '''
+    Function for drawing square
+    :param n: size of side
+    :return: None
+    '''
     for _ in range(4):
         turtle.fd(n)
         turtle.rt(90)
 
 
 def rec_square(n):
+    '''
+    Function for drawing rec_square
+    :param n: depth of recursion
+    :return: None
+    '''
     if n <= 1:
         return None
     square(n)
@@ -15,10 +25,16 @@ def rec_square(n):
     turtle.penup()
     turtle.fd(0.1 * n)
     turtle.pendown()
-    return rec_square(0.9 * n)
+    rec_square(0.9 * n)
 
 
 def color_tree(depth, size):
+    '''
+    Function for drawing colorful tree
+    :param depth: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     turtle.colormode(255)
     cg = 255 - int(depth * (250 / 6)) % 255
     turtle.color(0, cg, 0)
@@ -40,6 +56,12 @@ def color_tree(depth, size):
 
 
 def branch(n, size):
+    '''
+    Function for drawing branch
+    :param n: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     if n == 0:
         turtle.lt(180)
         return
@@ -59,6 +81,12 @@ def branch(n, size):
 
 
 def koch(order, size):
+    '''
+    Function for drawing koch
+    :param order: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     if order == 0:
         turtle.fd(size)
     else:
@@ -72,12 +100,24 @@ def koch(order, size):
 
 
 def koch_snow(n, x):
+    '''
+    Function for drawing
+    :param n: depth of recursion
+    :param x: size of side
+    :return: None
+    '''
     for i in range(3):
         koch(n, x)
         turtle.rt(120)
 
 
 def minkowski(n, size):
+    '''
+    Function for drawing Minkowski line
+    :param n: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     if n == 0:
         turtle.fd(size)
     else:
@@ -98,6 +138,12 @@ def minkowski(n, size):
 
 
 def ice_fractal_1(n, size):
+    '''
+    Function for drawing the first ice fractal
+    :param n: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     if n == 0:
         turtle.fd(size)
     else:
@@ -111,6 +157,12 @@ def ice_fractal_1(n, size):
 
 
 def ice_fractal_2(n, size):
+    '''
+    Function for drawing the second ice fractal
+    :param n: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     if n == 0:
         turtle.fd(size)
     else:
@@ -128,6 +180,12 @@ def ice_fractal_2(n, size):
 
 
 def levi(n, size):
+    '''
+    Function for drawing Levi line
+    :param n: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     if n == 0:
         turtle.fd(size)
     elif n % 2 == 0:
@@ -144,6 +202,12 @@ def levi(n, size):
 
 
 def new_fractal_1(n, size):
+    '''
+    Function for drawing the first new fractal
+    :param n: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     if n == 0:
         for i in range(2):
             turtle.fd(size / 4)
@@ -162,6 +226,12 @@ def new_fractal_1(n, size):
 
 
 def new_fractal_2(n, size):
+    '''
+    Function for drawing the second new fractal
+    :param n: depth of recursion
+    :param size: size of side
+    :return: None
+    '''
     if n == 0:
         turtle.fd(size)
     else:
