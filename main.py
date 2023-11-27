@@ -210,4 +210,15 @@ def new_fractal_1(n, size):
 #turtle.speed(-10)
 #new_fractal_1(2, 50)
 #turtle.done()
+def new_fractal_2(n,size):
+    if n == 0:
+        turtle.fd(size)
+    else:
+        for i in range(8):
+            branch(n - 1, size)
+            turtle.lt(360/8)
+
+
+#new_fractal_2(5,100)
+#turtle.done()
 
