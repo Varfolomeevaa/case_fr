@@ -18,8 +18,6 @@ def rec_square(n):
     return rec_square(0.9 * n)
 
 
-# rec_square(100)
-
 def color_tree(depth, size):
     turtle.colormode(255)
     cg = 255 - int(depth * (250 / 6)) % 255
@@ -41,184 +39,197 @@ def color_tree(depth, size):
         turtle.rt(45)
 
 
-'''
-turtle.left(90)
-color_tree(4, 100)
-turtle.done()
-'''
-
 def branch(n, size):
     if n == 0:
         turtle.lt(180)
         return
 
-    x = size/(n+1)
+    x = size / (n + 1)
     for i in range(n):
         turtle.fd(x)
         turtle.lt(45)
-        branch(n-i-1, 0.5*x*(n-i-1))
+        branch(n - i - 1, 0.5 * x * (n - i - 1))
         turtle.lt(90)
-        branch(n-i-1, 0.5*x*(n-i-1))
+        branch(n - i - 1, 0.5 * x * (n - i - 1))
         turtle.rt(135)
 
     turtle.fd(x)
     turtle.lt(180)
     turtle.fd(size)
-'''
-#turtle.tracer(0)
-turtle.up()
-turtle.goto(0,-100)
-turtle.left(90)
-turtle.down()
-branch(2, 400)
-turtle.done()'''
+
 
 def koch(order, size):
     if order == 0:
         turtle.fd(size)
     else:
-        koch(order-1, size/3)
+        koch(order - 1, size / 3)
         turtle.lt(60)
-        koch(order-1, size/3)
+        koch(order - 1, size / 3)
         turtle.rt(120)
-        koch(order-1, size/3)
+        koch(order - 1, size / 3)
         turtle.lt(60)
-        koch(order-1, size/3)
-'''
-turtle.up()
-turtle.goto(-100,0)
-turtle.down()
-koch(2,100)
-turtle.done()
-'''
+        koch(order - 1, size / 3)
+
+
 def koch_snow(n, x):
     for i in range(3):
-            koch(n, x)
-            turtle.rt(120)
-'''turtle.up()
-turtle.goto(-100, 0)
-turtle.down()
-koch_snow(3, 200)
-turtle.done()'''
+        koch(n, x)
+        turtle.rt(120)
+
 
 def minkowski(n, size):
     if n == 0:
         turtle.fd(size)
     else:
-        minkowski(n-1, size)
-        turtle.lt(90)
-        minkowski(n - 1, size)
-        turtle.rt(90)
-        minkowski(n - 1, size)
-        turtle.rt(90)
-        minkowski(n - 1, size)
-        minkowski(n - 1, size)
-        turtle.lt(90)
         minkowski(n - 1, size)
         turtle.lt(90)
         minkowski(n - 1, size)
         turtle.rt(90)
         minkowski(n - 1, size)
-'''turtle.up()
-turtle.goto(-500, 0)
-turtle.down()
-minkowski(3,10)
-turtle.done()'''
+        turtle.rt(90)
+        minkowski(n - 1, size)
+        minkowski(n - 1, size)
+        turtle.lt(90)
+        minkowski(n - 1, size)
+        turtle.lt(90)
+        minkowski(n - 1, size)
+        turtle.rt(90)
+        minkowski(n - 1, size)
+
 
 def ice_fractal_1(n, size):
     if n == 0:
         turtle.fd(size)
-
     else:
-        x = size
-        print(x)
-        ice_fractal_1(n - 1, x)
+        ice_fractal_1(n - 1, size)
         turtle.lt(90)
-        ice_fractal_1(n - 1, x/2)
+        ice_fractal_1(n - 1, size / 2)
         turtle.rt(180)
-        ice_fractal_1(n - 1, x/2)
+        ice_fractal_1(n - 1, size / 2)
         turtle.rt(-90)
-        ice_fractal_1(n - 1, x)
-'''turtle.pu()
-turtle.goto(-500, 0)
-turtle.pd()
-turtle.rt(0)
-ice_fractal_1(5, 50)
-turtle.done()'''
+        ice_fractal_1(n - 1, size)
+
 
 def ice_fractal_2(n, size):
     if n == 0:
         turtle.fd(size)
-
     else:
-        x = size
-        ice_fractal_2(n - 1, x)
+        ice_fractal_2(n - 1, size)
         turtle.lt(120)
-        ice_fractal_2(n - 1, x/2)
+        ice_fractal_2(n - 1, size / 2)
         turtle.lt(180)
-        ice_fractal_2(n - 1, x/2)
+        ice_fractal_2(n - 1, size / 2)
         turtle.lt(120)
-        ice_fractal_2(n - 1, x / 2)
+        ice_fractal_2(n - 1, size / 2)
         turtle.lt(180)
-        ice_fractal_2(n - 1, x / 2)
+        ice_fractal_2(n - 1, size / 2)
         turtle.lt(120)
-        ice_fractal_2(n - 1, x)
-'''        
-turtle.pu()
-turtle.goto(0, 0)
-turtle.pd()
-turtle.rt(0)
-ice_fractal_2(2, 50)
-turtle.done()'''
+        ice_fractal_2(n - 1, size)
+
 
 def levi(n, size):
-    x = size #чтобы чем больше была глуб.рекурсии, тем лучше вписывался рисунок в экран
     if n == 0:
-        turtle.fd(x)
+        turtle.fd(size)
     elif n % 2 == 0:
         turtle.lt(45)
-        levi(n-1, x)
+        levi(n - 1, size)
         turtle.rt(45)
-        levi(n - 1, x)
+        levi(n - 1, size)
         turtle.lt(90)
     else:
         turtle.lt(45)
-        levi(n-1, x)
+        levi(n - 1, size)
         turtle.rt(90)
-        levi(n - 1, x)
+        levi(n - 1, size)
 
-#levi(8, 10)
-#turtle.done()
 
 def new_fractal_1(n, size):
     if n == 0:
         for i in range(2):
-            turtle.fd(size/4)
+            turtle.fd(size / 4)
             turtle.lt(90)
-            turtle.fd(size/4)
+            turtle.fd(size / 4)
             turtle.rt(180)
-            turtle.fd(size/4)
+            turtle.fd(size / 4)
             turtle.lt(90)
-            turtle.fd(size/4)
+            turtle.fd(size / 4)
             turtle.rt(180)
     else:
         for i in range(3):
             ice_fractal_1(n, size / 2)
-            new_fractal_1(n-1, size)
+            new_fractal_1(n - 1, size)
             turtle.rt(120)
 
-#turtle.speed(-10)
-#new_fractal_1(2, 50)
-#turtle.done()
-def new_fractal_2(n,size):
+
+def new_fractal_2(n, size):
     if n == 0:
         turtle.fd(size)
     else:
         for i in range(8):
             branch(n - 1, size)
-            turtle.lt(360/8)
+            turtle.lt(360 / 8)
 
 
-#new_fractal_2(5,100)
-#turtle.done()
+def main():
+    print('Выберите фрактал:\n'
+          '1.Рекурсивный квадрат\n'
+          '2.Двоичное дерево\n'
+          '3.Ветка\n'
+          '4.Кривая Коха\n'
+          '5.Снежинка Коха\n'
+          '6.Кривая Минковского\n'
+          '7.Ледяной фрактал №1\n'
+          '8.Ледяной фрактал №2\n'
+          '9.Кривая Леви\n'
+          '10.Фрактал новый №1\n'
+          '11.Фрактал новый №2\n')
+    num_def = int(input('Введите номер:'))
+    n = int(input('Введите глубину рекурсии:'))
+    size = int(input('Введите длину стороны:'))
+    turtle.speed(0)
+    if num_def == 1:
+        rec_square(size)
+    elif num_def == 2:
+        turtle.lt(90)
+        color_tree(n, size)
+    elif num_def == 3:
+        turtle.up()
+        turtle.goto(0, -100)
+        turtle.left(90)
+        turtle.down()
+        branch(n, size)
+    elif num_def == 4:
+        turtle.up()
+        turtle.goto(-100, 0)
+        turtle.down()
+        koch(n, size)
+    elif num_def == 5:
+        turtle.up()
+        turtle.goto(-100, 0)
+        turtle.down()
+        koch_snow(n, size)
+    elif num_def == 6:
+        turtle.up()
+        turtle.goto(-500, 0)
+        turtle.down()
+        minkowski(n, size)
+    elif num_def == 7:
+        turtle.up()
+        turtle.goto(-500, 0)
+        turtle.down()
+        ice_fractal_1(n, size)
+    elif num_def == 8:
+        turtle.up()
+        turtle.goto(-700, 0)
+        turtle.down()
+        ice_fractal_2(n, size)
+    elif num_def == 9:
+        levi(n, size)
+    elif num_def == 10:
+        new_fractal_1(n, size)
+    elif num_def == 11:
+        new_fractal_2(n, size)
+    turtle.done()
 
+
+main()
